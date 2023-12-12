@@ -10,9 +10,12 @@ screen.bgcolor("black")
 screen.tracer(0)
 screen.title("Fahima is a Cutie")
 
+
 snakes = Snake()
 food = Food()
 scoreboard = ScoreBoard()
+
+
 screen.listen()
 
 screen.onkey(snakes.up, "Up")
@@ -31,11 +34,15 @@ while game_is_on:
         scoreboard.increase_score()
 
     if snakes.head.xcor() > 290 or snakes.head.xcor() < -290 or snakes.head.ycor() > 290 or snakes.head.ycor() < -290:
-        game_is_on = False
-        scoreboard.game_over()
+        # game_is_on = False
+        # scoreboard.game_over()
+        scoreboard.reset()
+        snakes.reset()
 
     for segment in snakes.snakes[1:]:
         if snakes.head.distance(segment) < 10:
-            game_is_on = False
-            scoreboard.game_over()
+            # game_is_on = False
+            # scoreboard.game_over()
+            scoreboard.reset()
+            snakes.reset()
 screen.exitonclick()
