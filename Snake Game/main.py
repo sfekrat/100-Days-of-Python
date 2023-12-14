@@ -8,7 +8,7 @@ screen = Screen()
 screen.setup(600, 600)
 screen.bgcolor("black")
 screen.tracer(0)
-screen.title("Fahima is a Cutie")
+screen.title("Snake Game")
 
 
 snakes = Snake()
